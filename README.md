@@ -8,7 +8,7 @@
 
 [LeadDevOpsEngineer.com](https://www.leaddevopsengineer.com) is an online social learning network where you can learn how to be a DevOps Engineer for free.
 
-# terraform-guardduty-securityhub 
+[terraform-guardduty-securityhub](https://leaddevopsengineer.medium.com/aws-serverless-workflow-orchestration-with-terraform-using-a-design-pattern-6c5f9e18d36b)
 is an entry level project for students of the online learning site Lead DevOps Engineer. Please read this blog post for more information about this project. 
 
 
