@@ -1,0 +1,5 @@
+1. Make sure everything is renamed from ingrestion to guardduty. Make sure account number is correct.
+2. Enable GuardDuty and Security Hub
+3. Create lambda layer for notification function. Use makefile in create_lambda_layers or use terraform code to do it in lambda_layers tf code. 
+   If using makefile then upload to Lambda Layer and make sure its version 1.
+4. renamed lambda files from ingestion- to guardduty-

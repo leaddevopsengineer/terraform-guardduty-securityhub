@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "states:StartExecution"
+          ],
+          "Resource": ${state_machine_arns}
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "states:DescribeExecution",
+              "states:StopExecution",
+              "states:StartExecution"
+          ],
+          "Resource": ${state_machine_arns}
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "events:PutTargets",
+              "events:PutRule",
+              "events:DescribeRule"
+          ],
+          "Resource": [
+             "arn:aws:events:${region}:${account_id}:rule/StepFunctionsGetEventsForStepFunctionsExecutionRule"
+          ]
+      }
+  ]
+}

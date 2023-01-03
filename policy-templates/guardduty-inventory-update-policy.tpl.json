@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DynamoDBTableAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem",
+        "dynamodb:ListTables"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:us-west-2:${account_id}:table/guardduty?classification?*",
+        "${inventory_table}"
+      ]
+    },
+    {
+      "Sid": "ActivityTokenAccess",
+      "Effect": "Allow",
+      "Action": [
+        "states:SendTaskSuccess",
+        "states:SendTaskFailure"
+      ],
+      "Resource": "arn:aws:states:us-west-2:${account_id}:stateMachine:guardduty-file-classification-workflow"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "eks:Describe*",
+        "eks:List*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

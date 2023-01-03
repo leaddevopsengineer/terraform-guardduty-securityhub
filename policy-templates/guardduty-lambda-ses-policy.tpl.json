@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+    "Sid": "LambdaSESPermissions",
+    "Effect": "Allow",
+    "Action": [
+        "ses:SendEmail",
+        "ses:SendRawEmail"
+    ],
+    "Resource": "*",
+    "Condition": {
+        "ForAllValues:StringLike": {
+            "ses:Recipients": [
+                "*@ghettolabs.io"
+            ]
+        }
+    }
+}
+    ]
+}

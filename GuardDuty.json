@@ -1,0 +1,121 @@
+{
+    "version": "0",
+    "id": "7140bf0d-55a7-df01-4bda-1a3ded9e20f3",
+    "detail-type": "GuardDuty Finding",
+    "source": "aws.guardduty",
+    "account": "1234567890",
+    "time": "2022-09-06T12:50:00Z",
+    "region": "us-west-2",
+    "resources": [],
+    "detail": {
+      "schemaVersion": "2.0",
+      "accountId": "1234567890",
+      "region": "us-west-2",
+      "partition": "aws",
+      "id": "32c1896af6576b39be6e5b9d78566b64",
+      "arn": "arn:aws:guardduty:us-west-2:1234567890:detector/fcc181e0a382ee88ca5ae04c620ade84/finding/32c1896af6576b39be6e5b9d78566b64",
+      "type": "Backdoor:EC2/C&CActivity.B!DNS",
+      "resource": {
+        "resourceType": "Instance",
+        "instanceDetails": {
+          "instanceId": "i-0a9bcb37773877036",
+          "instanceType": "t3.micro",
+          "launchTime": "2022-09-03T20:45:03.000Z",
+          "platform": null,
+          "productCodes": [],
+          "iamInstanceProfile": {
+            "arn": "arn:aws:iam::1234567890:instance-profile/GuardDuty-Tester-RedTeamEC2InstanceProfile-TjqGe4zo20KJ",
+            "id": "AIPAYBM45X2RLXTBDNLAA"
+          },
+          "networkInterfaces": [
+            {
+              "ipv6Addresses": [],
+              "networkInterfaceId": "eni-06bd7e08747b60f63",
+              "privateDnsName": "ip-10-40-74-233.us-west-2.compute.internal",
+              "privateIpAddress": "10.40.74.233",
+              "privateIpAddresses": [
+                {
+                  "privateDnsName": "ip-10-40-74-233.us-west-2.compute.internal",
+                  "privateIpAddress": "10.40.74.233"
+                }
+              ],
+              "subnetId": "subnet-089e4d12f4a31ed80",
+              "vpcId": "vpc-03fcb1e0d08741db0",
+              "securityGroups": [
+                {
+                  "groupName": "GuardDuty-Tester-RedTeamSecurityGroup-119C7DYO5WVRB",
+                  "groupId": "sg-0b128dddbdf3d37e2"
+                }
+              ]
+            }
+          ],
+          "outpostArn": null,
+          "tags": [
+            {
+              "key": "aws:autoscaling:groupName",
+              "value": "GuardDuty-Tester-ECSAutoScalingGroup-JTL1MJMU37GT"
+            },
+            {
+              "key": "aws:cloudformation:logical-id",
+              "value": "ECSAutoScalingGroup"
+            },
+            {
+              "key": "aws:cloudformation:stack-name",
+              "value": "GuardDuty-Tester"
+            },
+            {
+              "key": "aws:cloudformation:stack-id",
+              "value": "arn:aws:cloudformation:us-west-2:1234567890:stack/GuardDuty-Tester/c91a48f0-2bc8-11ed-9513-02ea8bd5fa6f"
+            },
+            {
+              "key": "Name",
+              "value": "RedTeam"
+            },
+            {
+              "key": "CreatedBy",
+              "value": "GuardDuty Test Script"
+            }
+          ],
+          "instanceState": "running",
+          "availabilityZone": "us-west-2a",
+          "imageId": "ami-014b01f8aa1a38b78",
+          "imageDescription": "Amazon Linux AMI 2.0.20220831 x86_64 ECS HVM GP2"
+        }
+      },
+      "service": {
+        "serviceName": "guardduty",
+        "detectorId": "fcc181e0a382ee88ca5ae04c620ade84",
+        "action": {
+          "actionType": "DNS_REQUEST",
+          "dnsRequestAction": {
+            "domain": "guarddutyc2activityb.com",
+            "protocol": "UDP",
+            "blocked": false
+          }
+        },
+        "resourceRole": "TARGET",
+        "additionalInfo": {
+          "threatListName": "TestDomain",
+          "value": "{\"threatListName\":\"TestDomain\"}",
+          "type": "default"
+        },
+        "evidence": {
+          "threatIntelligenceDetails": [
+            {
+              "threatListName": "TestDomain",
+              "threatNames": []
+            }
+          ]
+        },
+        "eventFirstSeen": "2022-09-06T11:40:35.000Z",
+        "eventLastSeen": "2022-09-06T11:40:35.000Z",
+        "archived": false,
+        "count": 1
+      },
+      "severity": 8,
+      "createdAt": "2022-09-06T12:45:53.198Z",
+      "updatedAt": "2022-09-06T12:45:53.198Z",
+      "title": "Command and Control server domain name queried by EC2 instance i-0a9bcb37773877036.",
+      "description": "EC2 instance i-0a9bcb37773877036 is querying a domain name associated with a known Command & Control server."
+    }
+  }
